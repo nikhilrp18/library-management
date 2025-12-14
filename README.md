@@ -23,7 +23,7 @@ A RESTful API for managing a community library system built with Spring Boot, fe
 
 1. **Clone the repository**
    ```powershell
-   git clone <repository-url>
+   git clone https://github.com/nikhilrp18/library-management.git
    cd library-management
    ```
 
