@@ -1,0 +1,46 @@
+spring:
+  application:
+    name: springbooks-library
+  
+  # H2 Database Configuration
+  datasource:
+    url: jdbc:h2:mem:librarydb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: password
+  
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+      settings:
+        web-allow-others: true
+  
+  # JPA Configuration
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    defer-datasource-initialization: true #ensure tables are created before insert query run
+  
+  # JWT Configuration (Mock for testing)
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://dev-example.auth0.com/
+          audiences: springbooks-api
+
+# Server Configuration
+server:
+  port: 8080
+
+# Logging
+logging:
+  level:
+    com.springbooks.library: DEBUG
+    org.springframework.security: DEBUG

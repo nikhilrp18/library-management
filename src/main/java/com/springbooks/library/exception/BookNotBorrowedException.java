@@ -1,0 +1,12 @@
+package com.springbooks.library.exception;
+
+public class BookNotBorrowedException extends RuntimeException {
+
+    public BookNotBorrowedException(String message) {
+        super(message);
+    }
+
+    public BookNotBorrowedException(String message, Throwable cause) {
+        super(message, cause);
+    }
+}
